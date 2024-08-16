@@ -1,0 +1,40 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+struct stInfo {
+	int age;
+	bool hasDrivingLicense;
+};
+
+stInfo readinfo() {
+	stInfo Info;
+	cout << "pleas enter your age : \n ";
+	cin >> Info.age;
+	cout << "do have driving license : \n ";
+	cin >> Info.hasDrivingLicense;
+	return Info;
+}
+
+bool IsAccepted(stInfo Info) {
+	return (Info.age > 21 && Info.hasDrivingLicense);
+};
+
+
+void printresult(stInfo Info) {
+	if (IsAccepted(Info))
+		cout << "\n is Hired " << endl;
+	else
+	{
+		cout << "\n Rejected " << endl;
+	}
+}
+
+int main()
+{
+
+	printresult(readinfo());
+
+}
+
